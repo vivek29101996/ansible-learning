@@ -1,0 +1,11 @@
+---
+- name: untar apache packages
+  hosts: all
+  become: true
+  tasks:
+  - name: untar        
+    ansible.builtin.unarchive:
+      src: /opt/apache-tomcat-8.5.35.tar.gz
+      dest: /opt
+      remote_src: yes
+

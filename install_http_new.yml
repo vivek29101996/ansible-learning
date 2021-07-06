@@ -1,0 +1,15 @@
+---
+- name: this playbook is for installing the required pakcages
+  hosts: webserver
+  become: true
+  tasks:
+  - name: install package
+    yum:
+      name: httpd
+      update_cache: yes
+      state: installed
+ 
+  - name: start httpd service
+    service:
+      name: httpd
+      state: started    
